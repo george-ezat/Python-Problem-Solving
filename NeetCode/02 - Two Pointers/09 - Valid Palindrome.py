@@ -1,5 +1,16 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
+        chars = list(filter(lambda c: c.isalnum(), s))
+        chars = list(map(lambda c: c.lower(), chars))
+
+        return chars == chars[::-1]
+
+
+# or
+
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
         chars = []
 
         for c in s:
