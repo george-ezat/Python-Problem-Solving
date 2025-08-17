@@ -1,7 +1,7 @@
 class Solution:
     def check_counts(self, s, t):
-        for c, cnt in s.items():
-            if cnt < t[c]:
+        for n, cnt in s.items():
+            if t[n] > cnt:
                 return False
 
         return True
@@ -10,14 +10,12 @@ class Solution:
         if not (s and t):
             return ''
 
-        t_count = Counter(t)
         s_count = {c: 0 for c in t}
-        print(t_count, s_count)
-
-        i, j = -1, -1
-        result_len = float('inf')
+        t_count = Counter(t)
 
         l = 0
+        i, j = -1, -1
+        result_len = float('inf')
         for r in range(len(s)):
             if s[r] in t:
                 s_count[s[r]] += 1
